@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === "GH_PAGES" ? {
+  router: {
+    base: "/one-night-webpage/alcoholic-tomorrow/"
+  }
+} : {}
+
 export default {
   mode: 'spa',
   /*
@@ -48,7 +54,5 @@ export default {
     extend(config, ctx) {
     }
   },
-  router: {
-    base: "one-night-webpage/"
-  }
+  ...routerBase
 }
