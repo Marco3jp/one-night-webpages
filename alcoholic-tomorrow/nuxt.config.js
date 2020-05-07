@@ -47,5 +47,8 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+  router: {
+    base: "one-night-webpage/"
   }
 }
