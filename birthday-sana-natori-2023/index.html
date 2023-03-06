@@ -6,8 +6,22 @@
 </head>
 <body>
 <svg viewBox="0 0 100 100">
-    <ellipse cx="35" cy="32.5" rx="10" ry="25" fill="#fad6e7" transform="rotate(-10, 35, 32.5)" />
-    <ellipse cx="65" cy="32.5" rx="10" ry="25" fill="#fad6e7" transform="rotate(10, 65, 32.5)" />
+    <ellipse cx="40" cy="30" rx="10" ry="25" fill="#fad6e7">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="-10 40 55; -15, 40 55; -10 40 55"
+                dur="3s"
+                repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="60" cy="30" rx="10" ry="25" fill="#fad6e7">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="10 60 55; 15, 60 55; 10 60 55"
+                dur="3s"
+                repeatCount="indefinite" />
+    </ellipse>
     <ellipse cx="50" cy="70" rx="25" ry="20" fill="#fad6e7" />
     <rect x="30" y="70" width="40" height="2" rx="1" ry="1" fill="#ff4472" transform="rotate(15, 50, 71)"></rect>
     <rect x="30" y="70" width="40" height="2" rx="1" ry="1" fill="#ff4472" transform="rotate(-15, 50, 71)"></rect>
