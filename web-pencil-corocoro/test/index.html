@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content" style="margin-left: 300px; margin-top: 700px; transform: rotateX(90deg); transform-style: preserve-3d;">
+    <div id="cone-wrapper" style="position: relative; transform-style: preserve-3d;"></div>
+</div>
+</body>
+<script>
+  const CONE_RESOLUTION = 30;
+  const coneWrapper = document.querySelector("#cone-wrapper");
+
+  function generateConePart(number) {
+    const part = document.createElement("div");
+    part.style.transformOrigin = "top center";
+    part.style.position = "absolute";
+    part.style.height = "500px";
+    part.style.width = "75px";
+
+    part.style.transform = `rotateZ(${360 / CONE_RESOLUTION * number}deg) rotateX(100deg)`;
+    part.style.background = "#FFB74D";
+
+    return part
+  }
+
+
+  for (let i = 0; i < CONE_RESOLUTION; i++) {
+      const part = generateConePart(i)
+      coneWrapper.appendChild(part)
+  }
+
+
+</script>
+</html>
