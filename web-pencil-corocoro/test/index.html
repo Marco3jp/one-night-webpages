@@ -7,11 +7,15 @@
 <body>
 <div id="content" style="margin-left: 300px; margin-top: 700px; transform: rotateX(90deg); transform-style: preserve-3d;">
     <div id="cone-wrapper" style="position: relative; transform-style: preserve-3d;"></div>
+    <div id="graphite-wrapper" style="position: relative; transform-style: preserve-3d;"></div>
 </div>
 </body>
 <script>
   const CONE_RESOLUTION = 30;
   const coneWrapper = document.querySelector("#cone-wrapper");
+
+  const GRAPHITE_RESOLUTION = 30;
+  const graphiteWrapper = document.querySelector("#graphite-wrapper");
 
   function generateConePart(number) {
     const part = document.createElement("div");
@@ -26,11 +30,29 @@
     return part
   }
 
+  function generateGraphitePart(number) {
+      const part = document.createElement("div");
+      part.style.transformOrigin = "top center";
+      part.style.position = "absolute";
+      part.style.height = "100px";
+      part.style.width = "75px";
+
+      part.style.transform = `rotateZ(${360 / GRAPHITE_RESOLUTION * number}deg) rotateX(120deg)`;
+      part.style.background = "black";
+
+      return part
+  }
 
   for (let i = 0; i < CONE_RESOLUTION; i++) {
       const part = generateConePart(i)
       coneWrapper.appendChild(part)
   }
+
+  for (let i = 0; i < GRAPHITE_RESOLUTION; i++) {
+      const part = generateGraphitePart(i)
+      graphiteWrapper.appendChild(part)
+  }
+
 
 
 </script>
